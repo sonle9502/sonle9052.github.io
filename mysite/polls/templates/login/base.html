@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <meta name="theme-color" content="#fafafa">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="/redirect?Id=bPkSKQqMZ9erlLi6p21Q4A%3d%3d" static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <link rel="stylesheet" href="stype.css">
+
+
+    <title>{% block title %}{% endblock %}</title>
+
+
+</head>
+<header>
+    <style>
+        
+        #container {
+            padding: 0px 10px 10px 10px;
+           
+        }
+        html, body {
+            height: 100%;
+            background-color: #f6f6f6;
+        }
+        #button-group {
+            background-color: #f6f6f6;
+            color: #000000;
+            padding: 0px 0px 5px 5px;
+            border-bottom: 1px solid #dededede;
+        }
+        #title-site {
+            background-color: #cff4fc;          
+            border-radius: 9px;
+            background: #00ffff;
+            color: #ffffff;
+            padding: 5px 10px 10px 10px;
+            border: none;           
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+            height: 60px;
+        }
+        h1#title-text {
+            font-size: 40px;           
+            color: #055160;                     
+            padding: 0px 10px 10px 5px;
+        }
+        #sub-header ul li:hover{ background-color: #000;}
+        #sub-header ul li:hover a{ color: #fff; }
+        #sub-header ul li.active{ background-color: #000; }
+        #sub-header ul li.active a{ color: #fff; }
+        .active {
+            background-color: #000;
+        }
+        /* to override the existing css for "a" tag */
+        #sub-header .active a {
+            
+        }
+        a:is(:link,:active,:visited).active{
+            background-color:#000000;
+        }
+                
+    </style>
+    
+    
+    <meta charset="UTF-8">
+    
+    <div id="container" class="">
+
+        <div id="title-site" class="" >
+            <h1 id="title-text" >My site</h1>
+        </div>
+        <p></p>
+        <div id="button-group">     
+            <nav>
+                <a href="{% url "demo:login" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">Login</a>
+                <a href="{% url "demo:BCC" %}" id="btn-2" class="btn btn-primary" role="button" data-bs-toggle="button">BCC</a>    
+                <a href="{% url "demo:hex-time-convert" %}" id="btn-" class="btn btn-primary" role="button" data-bs-toggle="button">Hex Timestamp Converter</a>                           
+                <a href="{% url "demo:telegram" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">送信電文</a>
+                <a href="{% url "demo:news" %}" id="btn-" class="btn btn-primary" role="button" data-bs-toggle="button">News</a>           
+                <a href="{% url "demo:personal-info" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">Personal infomation</a>
+                <a href="{% url "demo:work-experience" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">Work experience</a>
+                <a href="{% url "demo:academi" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">Academi Level</a>
+                <a href="{% url "demo:table" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">Table</a>
+                <a href="{% url "demo:table1" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">Table1</a>
+                <a href="{% url "demo:table2" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">Table2</a>
+                <a href="{% url "demo:test" %}" id="btn-1" class="btn btn-primary" role="button" data-bs-toggle="button">Test</a>
+                
+
+
+               
+            </nav>
+            
+        </div> 
+      
+       
+        <i class="fa-regular fa-clock"></i>
+        <i class="fa-sharp fa-solid fa-angles-left"></i> 
+        <i class="fa-regular fa-envelope"></i>
+        <i class="fa-sharp fa-solid fa-phone"></i>
+        <i class="fa-sharp fa-solid fa-users"></i>
+        <i class="fa-sharp fa-solid fa-angles-right"></i>                    
+    </div>
+    
+</header>
+
+<body>
+    <style>
+        #body-content {
+            padding: 10px 10px 20px 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }          
+    </style>
+    <div id="body-content" class="container-fluid" style="">
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+    
+    <script>
+       
+        const activePage = window.location.pathname;
+        const navLink = document.querySelectorAll("nav a").forEach(link => {
+            if (link.href.includes(`${activePage}`)) {
+                link.classList.add("active");
+            }
+        })
+          
+
+    </script>
+</body>
+
+
+</html>
+

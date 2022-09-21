@@ -1,0 +1,215 @@
+﻿{% extends "login/base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
+<script src="main.js"></script>
+     
+<body>
+
+    <style>
+
+        label#text-BCC {
+            margin-top: 0px;
+            color: #ffffff;
+            cursor: pointer;
+            border: 5px 15px;
+        }
+
+        label#label-text {
+        }
+
+        button#btn-open {
+            background: #ff6a00;
+            color: #ffffff;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        #modal-container {
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #modal-container.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        #modal {
+            background: #fff;
+            max-width: 500px;
+            position: relative;
+            left: 50%;
+            top: 100px;
+            transform: translateX(-50%);
+        }
+
+        .modal-headder {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #dededede;
+        }
+
+        .modal-headder h3 {
+            margin: 0;
+        }
+
+        button#btn-close {
+            outline: none;
+            border: none;
+            background: none;
+            font-size: 19px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 15px 20px 4px;
+        }
+
+        p#result {
+            margin-top: 10px;
+        }
+
+        .red {
+            color: #ff0000ff;
+        }
+    </style>
+
+    <div id="wrapper">
+
+
+        <button id="btn-open"> Click here for 説明 </button>
+        <p></p>
+
+        <div id="modal-container" class="">
+            <div id="modal">
+                <div class="modal-headder">
+                    <h3>BCC計算　tool</h3>
+                    <button id="btn-close"><i class="fa-solid fa-xmark"></i></button>
+
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                    <p style="color: #ff0000ff;">電文後にBCCを付ける計算です。</p>
+                    <p>● 計算式：01,02を含めず、03or17まで計算式となっております。</p>
+                    <p>例１：01AB9F03 ⇒　AB9F03 を計算</p>
+                    <p>例２：02AB9F17 ⇒　AB9F17 を計算</p>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="add" class="BCC">
+            <div class="badge bg-primary text-wrap " style="width: 5rem;">
+                <label id="text-BCC">BCC 計算</label>
+            </div>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {% if LOI != 1 %}
+            <p><label for="name">電文を入力してください</label></p>
+            <input type="text" name="user" value="" />
+            <input type="submit" name="" value="計算" />
+            <p id="result" style="font-size:20px">転送電文は:</p>
+
+            {% else %}
+            <p><label for="name">電文を入力してください</label></p>
+            <input type="text" name="user" value="" />
+            <input type="submit" name="" value="計算" />
+
+            {% endif %}
+        </form>
+
+        <div>
+            <li>１：STX-局番　{{len}}</li>
+            <li>１：STX-局番　{{list}}</li>
+            <li>１：STX-局番　{{item1}}</li>
+            <li>２：局番-SP　{{item2}}</li>
+            <li>３：ワード-ワード　{{item3}}</li>
+            <li>４：SP-フラグ　{{item4}}</li>
+            <li>５：フラグ-SP　{{item5}}</li>
+            <li>６：data　{{item6}}</li>
+            <li>７：data　{{item7}}</li>
+            <li>８：カンマ-局番　{{item8}}</li>
+            <li>９：局番-SP　{{item9}}</li>
+            <li>１０：ワード-ワード　{{item10}}</li>
+            <li>１１：SP-フラグ　{{item11}}</li>
+            <li>１２：フラグ-SP　{{item12}}</li>
+            <li>１３：data　{{item13}}</li>
+            <li>１４：data　{{item14}}</li>
+            <li>１５：カンマ-局番　{{item15}}</li>
+            <li>１６：局番-SP　{{item16}}</li>
+            <li>１７：ワード-ワード　{{item17}}</li>
+            <li>１８：SP-フラグ　{{item18}}</li>
+            <li>１９：フラグ-SP　{{item19}}</li>
+            <li>２０：data　{{item20}}</li>
+            <li>２１：data　{{item21}}</li>
+            <li>２２：カンマ-局番　{{item22}}</li>
+            <li>２３：局番-SP　{{item23}}</li>
+            <li>２４：ワード-ワード　{{item24}}</li>
+            <li>２５：SP-フラグ　{{item25}}</li>
+            <li>２６：フラグ-SP　{{item26}}</li>
+            <li>２７：data　{{item27}}</li>
+            <li>２８：data　{{item28}}</li>
+            <li>２９：カンマ-局番　{{item29}}</li>
+            <li>３０：局番-SP　{{item30}}</li>
+            <li>３１：ワード-ワード　{{item31}}</li>
+            <li>３２：SP-フラグ　{{item32}}</li>
+            <li>３３：フラグ-SP　{{item33}}</li>
+            <li>３４：data　{{item34}}</li>
+            <li>３５：data　{{item35}}</li>
+            <li>３６：カンマ-局番　{{item36}}</li>
+            <li>３７：局番-SP　{{item37}}</li>
+            <li>３８：ワード-ワード　{{item38}}</li>
+            <li>３９：SP-フラグ　{{item39}}</li>
+            <li>４０：フラグ-SP　{{item40}}</li>
+            <li>４１：data　{{item41}}</li>
+            <li>４２：data　{{item42}}</li>
+            <li>４３：ETB-BCC　{{item43}}</li>
+            <li>４４：BCC-0D　{{item44}}</li>
+            <li>４５：0A-　{{item45}}</li>
+            <li>４６：--　{{item46}}</li>
+            <li>４７：--　{{item47}}</li>
+            <li>４８：--　{{item48}}</li>
+
+
+        </div>
+
+
+
+    </div>
+    <script>
+        var btn_openElement = document.getElementById("btn-open")
+        var btn_closeElement = document.getElementById("btn-close")
+        var modalElement = document.getElementById("modal-container")
+        btn_openElement.addEventListener("click", () => {
+            modalElement.classList.add("show")
+        })
+        btn_closeElement.addEventListener("click", () => {
+            modalElement.classList.remove("show")
+        })
+
+    </script>
+    
+
+    
+</body>
+</html>
+{% endblock %}

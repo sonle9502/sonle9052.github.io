@@ -1,0 +1,33 @@
+﻿
+{% extends "login/base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/fontawesome/css/all.css">    
+    
+<body>
+
+    <div class="Login">
+        <form action="{% url "demo:BCC" %}" method="post">
+            {% csrf_token %}
+            <label for="name">User:</label><br>
+
+            <input type="text" name="text" value="" /><br>
+
+            <label for="name">Password:</label><br>
+
+            <input type="password" name="password" value="" /><br>
+
+            <input id="login" type="submit" name="Đăng nhập" value="Đăng nhập" />
+
+        </form>
+        
+
+
+    </div>
+
+</body>
+</html>
+{% endblock %}

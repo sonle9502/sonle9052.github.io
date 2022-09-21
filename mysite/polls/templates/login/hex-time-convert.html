@@ -1,0 +1,183 @@
+﻿{% extends "login/base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
+     
+<body>
+
+    <style>
+
+        label#text-hextime {
+            margin-top: 0px;
+            color: #ffffff;
+            cursor: pointer;
+            border: 5px 15px;
+        }
+
+        label#label-text {
+        }
+
+        button#btn-open {
+            background: #EE0000;
+            color: #ffffff;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        #modal-container {
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #modal-container.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        #modal {
+            background: #fff;
+            max-width: 530px;
+            position: relative;
+            left: 50%;
+            top: 100px;
+            transform: translateX(-50%);
+        }
+
+        .modal-headder {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #dededede;
+        }
+
+        .modal-headder h3 {
+            margin: 0;
+        }
+
+        button#btn-close {
+            outline: none;
+            border: none;
+            background: none;
+            font-size: 19px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 15px 20px 4px;
+        }
+
+        table, td, th {
+            border-bottom-left-radius: 1px solid #333;
+            border-collapse: collapse;
+        }
+
+        table {
+            border-top: 5px;
+            border: 1px solid red;          
+        }
+        .table {
+            width:50%;
+        }
+
+        table#table {
+            boder: 1px;
+        }
+
+        .table.table-hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+    </style>
+
+    <div id="wrapper">
+
+
+        <p><button id="btn-open"> Click here for 説明 </button></p>
+
+
+
+        <div id="modal-container" class="">
+            <div id="modal">
+                <div class="modal-headder">
+                    <h3>Hex timestamp tool</h3>
+
+                    <button id="btn-close"><i class="fa-solid fa-xmark"></i></button>
+
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                    <p style="color: #ff0000ff;">Hex timestamp convert</p>
+                    <li>For example：62d7b5d9 </li>
+                    <li>⇒ consult：2022year 7month 20day 16hours 59minute 21second</li>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="add" class="">
+            <div class="badge bg-primary text-wrap " style="width: 5rem;">
+                <label id="text-hextime">Hex Timestamp Converter</label>
+            </div>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p><label for="name">Hex Timestampを入力してください</label></p>
+            <input type="text" name="user" value="" />
+            <input type="submit" name="" value="計算" />
+        </form>
+        <table id="table" class="table show">
+            <tr>
+                <th>Year</th>
+                <th>Month</th>
+                <th>Day</th>
+                <th>Hours</th>
+                <th>Minute</th>
+                <th>Second</th>
+                <th>Timezone</th>
+            </tr>
+            <tr>
+                <td>{{year}}</td>
+                <td>{{month}}</td>
+                <td>{{day}}</td>
+                <td>{{hours}}</td>
+                <td>{{minute}}</td>
+                <td>{{second}}</td>
+                <td>{{timezone}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+
+        const btn_open = document.getElementById("btn-open");
+        const btn_close = document.getElementById("btn-close");
+        const modal_container = document.getElementById("modal-container");
+
+        btn_open.addEventListener("click", () => {
+            modal_container.classList.add("show");
+        });
+
+        btn_close.addEventListener("click", () => {
+            modal_container.classList.remove("show");
+        });
+
+    </script>
+
+</body>
+</html>
+{% endblock %}

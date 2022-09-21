@@ -1,0 +1,100 @@
+﻿{% extends "login/base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+<body>
+   
+    <style>
+        button#btn-open {
+            background: #ff6a00;
+            color: #ffffff;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+        }
+        button#btn-close {
+            background: none;
+            border: none;
+        }
+        #modal {
+            background: #fff;
+            max-width: 500px;
+            position: relative;
+            left: 50%;
+            top: 100px;
+            transform: translateX(-50%)
+        }
+        #modal-container {
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+
+        }
+        #modal-container.show {
+            opacity: 1;
+            pointer-events: all;
+
+        }
+        #modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #dededede;
+
+        }
+        #modal-body {
+            padding: 15px 20px 4px ;
+        }
+        #wrapper {
+            padding: 0;
+        }
+        
+    </style>        
+
+    <wrapper id="wrapper">
+
+        <button id="btn-open">Click here for 説明</button>
+        <h1 id="clickTest">hello</h1>
+        <div id="modal-container" class="">
+            <div id="modal">
+                <div id="modal-header">
+                    <h2>content</h2>
+                    <button id="btn-close"><i class="fa-solid fa-xmark"></i></button>
+
+                </div>
+                <div id="modal-body">
+                    <p>説明内容 - contents</p>
+
+                </div>
+
+            </div>
+
+        </div>
+       
+        <script>
+            const btn_open = document.getElementById("btn-open");
+            const btn_closeElement = document.getElementById("btn-close");
+            const modalcontainerElement = document.getElementById("modal-container");
+
+            btn_open.addEventListener("click", () => {
+                modalcontainerElement.classList.add("show");
+            })
+            btn_closeElement.addEventListener("click", () => {
+                modalcontainerElement.classList.remove("show")
+            })
+                       
+
+        </script>
+    </wrapper>
+</body>
+</html>
+{% endblock %}

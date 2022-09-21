@@ -1,0 +1,1 @@
+var json_string = '['12', '34']'

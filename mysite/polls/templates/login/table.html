@@ -1,0 +1,279 @@
+﻿
+{% extends "login/base.html" %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/fontawesome/css/all.css">
+
+     
+<body>
+    <style>
+        
+
+        table {
+            width: 100%;
+        }
+
+        table, td, th {
+            border-bottom-left-radius: 1px solid #333;
+            border-collapse: collapse;
+        }
+
+        .table.table-dark {
+            background-color: #333;
+            color: #4cff00;
+        }
+
+        .table.table-hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .table.table-hover tbody tr:hover {
+            background-color: #4cff00;
+        }
+
+        .table.table-hover tbody tr:hover {
+            color: #ff0000;
+        }
+        
+
+
+        .table.table-striped tbody tr:nth-child(even) {
+            background: #4cff00;
+            color: #ff0000;
+        }
+        .table.table-striped tbody tr:nth-child(odd) {
+            background: #00ff90;
+            color: #ff0000;
+        }
+    </style>
+    <wrapper id="swapper">
+
+
+        <h1>Table html</h1>
+        
+        <input id="submit-button" type="button" name="submit-button" value="submit" />
+        
+
+        <table class="table  table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Họ </th>
+                    <th>Tên</th>
+                    <th>Giới tính</th>
+                    <th>Lương</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lê</td>
+                    <td>Văn</td>
+                    <td>Sơn</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Đào</td>
+                    <td>Văn</td>
+                    <td>Phú</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Lê</td>
+                    <td>Văn</td>
+                    <td>Sơn</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Đào</td>
+                    <td>Văn</td>
+                    <td>Phú</td>
+                    <td>$1000</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Tổng</td>
+                    <td>họ</td>
+
+
+                </tr>
+
+            </tfoot>
+
+
+        </table>
+
+        <h2>Table striped</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Họ </th>
+                    <th>Tên</th>
+                    <th>Giới tính</th>
+                    <th>Lương</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lê</td>
+                    <td>Văn</td>
+                    <td>Sơn</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Tổng</td>
+                    <td>họ</td>
+
+
+                </tr>
+
+            </tfoot>
+
+
+        </table>
+
+        <h2>Table striped default</h2>
+
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Họ </th>
+                    <th>Tên</th>
+                    <th>Giới tính</th>
+                    <th>Lương</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lê</td>
+                    <td>Văn</td>
+                    <td>Sơn</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đào</td>
+                    <td>Thị</td>
+                    <td>Cúc</td>
+                    <td>$1000</td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Tổng</td>
+                    <td>họ</td>
+
+
+                </tr>
+
+            </tfoot>
+
+
+        </table>
+    </wrapper>
+    <script>
+        const submit_button = document.getElementById("submit-button");
+        submit_button.addEventListener("click", () => {
+            table += 1;
+        })
+    </script>
+</body>
+
+
+
+{% endblock %}

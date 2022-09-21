@@ -1,0 +1,136 @@
+﻿
+{% extends "login/base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/fontawesome/css/all.css">
+
+<body>
+    <style>
+        table#table {
+            boder: 1px;
+        }
+        table, td, th {
+            border-bottom-left-radius: 1px solid #333;
+            border-collapse: collapse;
+        }
+        .table.table-hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .table.table-hover tbody tr:hover {
+            background: #4cff00;
+            
+        }
+        
+    </style>
+    <wrapper id="swapper">
+
+
+        <h1>Table html</h1>
+        <div>
+            <label>ID</label>
+            <input id="ID" type="text" name="name" value="" />
+        </div>
+        <div>
+            <label>First name</label>
+            <input id="First-name" type="text" name="name" value="" />
+        </div>
+        <div>
+            <label>Midle name</label>
+            <input id="Midle-name" type="text" name="name" value="" />
+        </div>
+        <div>
+            <label>Name</label>
+            <input id="Name" type="text" name="name" value="" />
+        </div>
+        <div>
+            <label>Saraly</label>
+            <input id="Sarary" type="text" name="name" value="" />
+        </div>
+
+
+        <button id="    " onclick="add_child()">submit</button>
+        <table id="table" class="table table-hover">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>First name</td>
+                    <td>Middle name</td>
+                    <td>Name</td>
+                    <td>Sarary</td>
+                </tr>
+            </thead>
+            
+        </table>
+        
+
+    </wrapper>
+    <script>
+
+        var data = [];
+        var data1 = 
+        function add_child() {
+            var ID = document.getElementById("ID").value;
+            var First_name = document.getElementById("First-name").value;
+            var Midle_name = document.getElementById("Midle-name").value;
+            var Name = document.getElementById("Name").value;
+            var Sarary = document.getElementById("Sarary").value;
+            
+            if (ID == "" || First_name == "" || Midle_name == "" || Name == "" || Sarary == "") {                                      
+               
+                clear();
+                
+            }
+            else
+                item = {
+                    "ID": ID,
+                    "First_name": First_name,
+                    "Midle_name": Midle_name,
+                    "Name": Name,
+                    "Sarary": Sarary,
+                }
+                data.push(item)
+                render();
+                clear();
+  
+        }
+        function render() {
+            table =`<thead> <tr>
+                <td>ID</td>
+                <td>First name</td>
+                <td>Middle name</td>
+                <td>Name</td>
+                <td>Sarary</td>
+            </tr> </thead>`
+            for (let i = 0; i < data.length; i++)
+                table +=  `<tbody> <tr>
+                    <td>${data[i].ID}</td>
+                    <td>${data[i].First_name}</td>
+                    <td>${data[i].Midle_name}</td>
+                    <td>${data[i].Name}</td>
+                    <td>${data[i].Sarary}</td>
+                
+            </tr> </tbody>`
+        document.getElementById("table").innerHTML = table;
+            
+        }
+        function clear() {
+            document.getElementById("ID").value = "";
+            document.getElementById("First-name").value = "";
+            document.getElementById("Midle-name").value = "";
+            document.getElementById("Name").value = "";
+            document.getElementById("Sarary").value = "";
+
+        }
+        
+        
+
+    </script>
+</body>
+
+
+
+{% endblock %}

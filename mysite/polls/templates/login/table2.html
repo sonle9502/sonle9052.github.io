@@ -1,0 +1,110 @@
+﻿
+{% extends "login/base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/fontawesome/css/all.css">
+
+<body>
+    <style>
+        table#table {
+            boder: 1px;
+        }
+        table, td, th {
+            border-bottom-left-radius: 1px solid #333;
+            border-collapse: collapse;
+        }
+        .table.table-hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .table.table-hover tbody tr:hover {
+            background: #4cff00;
+            
+        }
+        
+    </style>
+    <wrapper id="swapper">
+
+
+        <h1>Table html</h1>
+        <table id="table" class="table table-hover">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>First name</td>
+                    <td>Middle name</td>
+                    <td>Name</td>
+                    <td>Sarary</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{dict.item1.ID}}</td>
+                    <td>{{dict.item1.Firstname}}</td>
+                    <td>{{dict.item1.Midlename}}</td>
+                    <td>{{dict.item1.name}}</td>
+                    <td>{{dict.item1.sarary}}</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>{{dict.item2.ID}}</td>
+                    <td>{{dict.item2.Firstname}}</td>
+                    <td>{{dict.item2.Midlename}}</td>
+                    <td>{{dict.item2.name}}</td>
+                    <td>{{dict.item2.sarary}}</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>{{dict.item3.ID}}</td>
+                    <td>{{dict.item3.Firstname}}</td>
+                    <td>{{dict.item3.Midlename}}</td>
+                    <td>{{dict.item3.name}}</td>
+                    <td>{{dict.item3.sarary}}</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>{{dict.item4.ID}}</td>
+                    <td>{{dict.item4.Firstname}}</td>
+                    <td>{{dict.item4.Midlename}}</td>
+                    <td>{{dict.item4.name}}</td>
+                    <td>{{dict.item4.sarary}}</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>{{dict.item5.ID}}</td>
+                    <td>{{dict.item5.Firstname}}</td>
+                    <td>{{dict.item5.Midlename}}</td>
+                    <td>{{dict.item5.name}}</td>
+                    <td>{{dict.item5.sarary}}</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>{{dict.item6.ID}}</td>
+                    <td>{{dict.item6.Firstname}}</td>
+                    <td>{{dict.item6.Midlename}}</td>
+                    <td>{{dict.item6.name}}</td>
+                    <td>{{dict.item6.sarary}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </wrapper>
+    <script>
+
+        
+
+    </script>
+</body>
+
+
+
+{% endblock %}
